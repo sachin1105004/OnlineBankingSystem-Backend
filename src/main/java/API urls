@@ -1,0 +1,76 @@
+Project Name :- Online Banking System 
+
+operations urls:-
+
+	to: - register new user
+	
+	POST : http://localhost:8080/users/register
+	
+	JSON: 
+	
+	{
+    "name": "",
+    "location": "",
+    "email":"",
+
+	}
+
+
+--for view user by ID
+
+Get : http://localhost:8080/users/findBy/{id} --
+
+-- for view all users 
+
+Get : http://localhost:8080/users/findAll   --
+
+	to:- create new account
+	
+	POST : http://localhost:8080/accounts/create
+	JSON:
+		
+		{
+    "accNumber":"Acc077",
+    "balance":16000,
+    "user":{
+        "id": 6
+        
+    }
+
+}
+
+
+-- for view accounts by ID
+
+GET : http://localhost:8080/accounts/findBy/{id} --
+
+-- for view all accounts
+
+GET : http://localhost:8080/accounts/findAll  --
+
+	to:-create transaction
+	
+	POST : http://localhost:8080/txn/create
+ 	
+ 	JSON:
+ 	
+ 	{
+  "fromAccount": "ACC1001",
+  "toAccount": "ACC3003",
+  "amount": 1500.75,
+  "transactionDate": "2025-09-16T22:30:00",
+  "description": "Payment for invoice #101"
+ }
+ 	
+
+-- for view txn history by id
+
+GET : http://localhost:8080/txn/txnById/1 --
+
+-- for view txn history by AccNo.
+	
+GET : http://localhost:8080/txn/account/ACC3003 --
+
+-- for view  all txn history 
+	
+GET : http://localhost:8080/txn/txnHistory  --
